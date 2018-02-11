@@ -1,0 +1,19 @@
+==LEXER==
+Une fois à la fin de la ligne je délimite le dernier TOKEN
+Je check lettre par lettre la corespondance avec un OPERATOR.
+    Si la lettre precedente apartenait à un opérateur et la suivante aussi je continue le parsing
+    Si la lettre precedente apartenait à un opérateur et la suivante non. Je délimite le TOKEN.
+Si l'on tombe sur un charactère de QUOTING on avance jusqu'à la fin du QUOTING et on garde les lettres tel-quel.
+    La seule exception viens pour le backslash avant la nouvelle ligne qui est une continuation de ligne pour laquelle nous supprimons les deux charactères.
+Si on atteint un charatères pouvant représenter un nouvel opérateur le token courant est délimité et le charactères courant repésente le debut du nouveau TOKEN.
+Si l'on tombe sur un WHITESPACE le TOKEN du charactères précédent est délimité et le WHITESPACE ignoré.
+Si le charactère précédent faisait parti d'un WORD on ajout à celui çi le charactère courant.
+Si le charactère courant est un # tout les charcatères avant la NEWLINE sont ignorés. La NEWLINE elle est bien prise en compte.
+En dernier le charactère courant est considérés comme le debut un nouveau WORD.
+
+Je délimite les TOKENS et les placent dans une liste chainées.
+
+==PARSER==
+Je créer un arbre syntaxtique abstrait en créant des NODES terminaux et non-terminaux. Pour la récursivité qui va me permettre de créer l'abre je me fie à la GRAMMAIRE du SHELL.
+
+Je prends l'ensemble des TOKENS,
