@@ -6,12 +6,15 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/11 18:48:15 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/11 19:37:59 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 int main(int ac, char **av, char **env)
 {
+    (void)ac;
+    (void)av;
+    (void)env;
 }
