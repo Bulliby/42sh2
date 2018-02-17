@@ -1,26 +1,34 @@
-NAME		= 42sh
+NAME			= 42sh
 
-CC			= gcc
-CFLAGS		= -Wall -Wextra -Werror
-INCLUDES	= -I./includes -I./libft/includes
-LIB			= -L./libft -lft
+$(shell mkdir -p .obj/src/readline 2> /dev/null)
 
-$(shell mkdir .obj 2> /dev/null)
+CC				= gcc
+CFLAGS			= -Wall -Wextra -Werror -g
+INCLUDES		= -I./src/includes -I./libft/includes
+LIB				= -L./libft -lft -lncurses
 
-SRC 		= main.c
-OBJ_PATH	= .obj/
+SRC 			= main.c\
 
-OBJS        = $(SRC:.c=.o)
+READLINE	    = move.c\
+				  winsize.c\
+				  cap.c\
+
+READLINE_SRC	= $(addprefix readline/, $(READLINE))
+			  
+
+OBJ_PATH		= .obj/src/
+
+OBJS        = $(SRC:.c=.o) $(READLINE_SRC:.c=.o)
 COMPILE     = $(addprefix $(OBJ_PATH), $(OBJS))
 
 all: $(NAME)
 
 $(NAME): $(COMPILE)
 	make -C libft
-	$(CC) $(CFLAGS) $(INCLUDES) $(LIB) $(COMPILE) -o $(NAME)
+	$(CC) $(CFLAGS) $(COMPILE) $(INCLUDES) $(LIB) -o $(NAME)
 
-$(OBJ_PATH)%.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -o $@ -c $<
+$(OBJ_PATH)%.o: src/%.c
+	$(CC) $(CFLAGS) $(INCLUDES) $(LIB) -o $@ -c $<
 
 submodule:
 	git submodule init libft

@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   main.c                                                                   */
+/*   move.h                                                                   */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/11 19:37:59 by bulliby             \________/\/\_/      */
+/*   Created: 2018/02/17 19:36:16 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/02/17 20:15:05 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#ifndef MOVE_H
+# define MOVE_H
 
-int main(int ac, char **av, char **env)
+typedef struct		s_input
 {
-    (void)ac;
-    (void)av;
-    (void)env;
-}
+	char			*cmd_line;
+}					t_input;
+
+typedef struct		s_cursor
+{
+	int				x;
+	int				y;
+}					t_cursor;
+
+void				move_right(void);
+void				move_left(void);
+
+#endif
