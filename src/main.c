@@ -6,13 +6,14 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/17 22:44:08 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/18 12:30:36 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "main.h"
 #include <unistd.h>
+#include "readline/move.h"
 
 t_term  g_term;
 
@@ -22,7 +23,11 @@ char    *getInput()
 
     buffer = ft_memalloc_fail(8);
 	read(0, buffer, 8);
-    printf("[%X%X%X%X%X%X%X%X]\n", buffer[7], buffer[6], buffer[5], buffer[4], buffer[3], buffer[2], buffer[1], buffer[0]);
+    printf("[%X%X%X%X%X%X%X%X%X%X]\n", buffer[9], buffer[8], buffer[7], buffer[6], buffer[5], buffer[4], buffer[3], buffer[2], buffer[1], buffer[0]);
+    if (ft_strcmp(buffer, k_CTRL_LEFT) == 0)
+    {
+        printf("TOTO\n");
+    }
 	return (buffer);
 
 }
