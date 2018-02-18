@@ -11,6 +11,7 @@ SRC 			= main.c\
 
 READLINE	    = move.c\
 				  winsize.c\
+				  term.c\
 				  cap.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))
@@ -18,8 +19,8 @@ READLINE_SRC	= $(addprefix readline/, $(READLINE))
 
 OBJ_PATH		= .obj/src/
 
-OBJS        = $(SRC:.c=.o) $(READLINE_SRC:.c=.o)
-COMPILE     = $(addprefix $(OBJ_PATH), $(OBJS))
+OBJS        	= $(SRC:.c=.o) $(READLINE_SRC:.c=.o)
+COMPILE     	= $(addprefix $(OBJ_PATH), $(OBJS))
 
 all: $(NAME)
 

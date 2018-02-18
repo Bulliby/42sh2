@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   cap.h                                                                    */
+/*   events.h                                                                 */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/17 22:15:33 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/18 23:00:13 by bulliby             \________/\/\_/      */
+/*   Created: 2018/02/18 13:15:13 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/02/18 23:44:04 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAP_H
-# define CAP_H
+#ifndef EVENTS_H
+# define EVENTS_H
 
-#include <curses.h>
-#include <term.h>
+# define k_UP "\x1B\x5B\x41"
+# define k_DOWN "\x1B\x5B\x42"
+# define k_LEFT "\x1B\x5B\x44"
+# define k_RIGHT "\x1B\x5B\x43"
+# define k_CTRL_UP "\x1B\x5B\x31\x3B\x35\x43"
+# define k_CTRL_LEFT "\x1B\x5B\x31\x3B\x35\x44"
 
-void				use_ncap(char *cap, int n);
-void				use_cap(char *cap);
-char				*fetch_cap(char *cap);
+# define EVENTS 2
+# define UP 0
+# define DOWN 1
+# define LEFT 2
+# define RIGHT 3
+# define CTRL_UP 4
+# define CTRL_LEFT 5
 
 #endif

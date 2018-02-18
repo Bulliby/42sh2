@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   cap.h                                                                    */
+/*   term.h                                                                   */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/17 22:15:33 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/18 23:00:13 by bulliby             \________/\/\_/      */
+/*   Created: 2018/02/18 13:08:45 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/02/18 23:39:07 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAP_H
-# define CAP_H
+#ifndef TERM_CONF_H
+# define TERM_CONF_H
 
-#include <curses.h>
-#include <term.h>
+# include <termios.h>
 
-void				use_ncap(char *cap, int n);
-void				use_cap(char *cap);
-char				*fetch_cap(char *cap);
+typedef struct termios  t_termios;
+
+typedef struct	        s_term
+{
+	int				    fd;
+	t_termios		    termios;
+}				    	t_term;
+
+void		            exit_term(void);
+void		            init_term(void);
 
 #endif
