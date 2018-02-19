@@ -6,12 +6,13 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/17 20:23:27 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/18 13:09:37 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/19 21:48:19 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAIN_H
 # define MAIN_H
  
+# define MAX_INPUT_READ 8
 
 #endif

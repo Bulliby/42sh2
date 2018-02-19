@@ -6,17 +6,22 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 23:43:05 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/18 23:44:30 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/19 23:37:17 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-int					*key_tab_events(void)
-{
-	int	*ret;
+#include "events.h"
+#include "libft.h"
+#include "move.h"
+#include "../main.h"
 
-	ret = ft_memalloc_fail(sizeof(int) * EVENTS);
-	ret[0] = T_UP;
-	ret[1] = T_DOWN;
+char					**key_tab_events(void)
+{
+    char                **keys;
+
+    keys = ft_memalloc_fail(sizeof(char **) * EVENTS);
+    keys[0] = ft_strdup(k_UP);
+    keys[1] = ft_strdup(k_DOWN);
 	/*ret[2] = T_LEFT;
 	ret[3] = T_RIGHT;
 	ret[4] = T_DEL;
@@ -29,5 +34,27 @@ int					*key_tab_events(void)
 	ret[11] = T_PAST;
 	ret[12] = T_HUP;
 	ret[13] = T_HDOWN;*/
-	return (ret);
+	return (keys);
+}
+
+t_func_events       *ptr_events()
+{
+    t_func_events *events;
+
+    events = ft_memalloc_fail(sizeof(t_func_events) * EVENTS);
+	events[UP] = &move_left;
+	events[DOWN] = &move_right;
+	/*ptrfunc[LEFT] = &move_left;
+	ptrfunc[RIGHT] = &move_right;
+	ptrfunc[DEL] = &del_at;
+	ptrfunc[HOME] = &home;
+	ptrfunc[END] = &end;
+	ptrfunc[FWORD] = &fword;
+	ptrfunc[BWORD] = &bword;
+	ptrfunc[CP] = &select_c;
+	ptrfunc[SUP] = &del;
+	ptrfunc[PAST] = &past;
+	ptrfunc[HISTORY_UP] = &history_up;
+	ptrfunc[HISTORY_DOWN] = &history_down;*/
+    return (events);
 }

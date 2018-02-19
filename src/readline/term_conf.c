@@ -6,15 +6,17 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 23:39:59 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/18 23:40:00 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/19 21:10:32 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "term2.h"
-#include "libft.h"
 #include <unistd.h>
+#include <fcntl.h>
 #include <curses.h>
 #include <term.h>
+
+#include "term_conf.h"
+#include "libft.h"
 
 t_term  g_term;
 

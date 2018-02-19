@@ -6,13 +6,12 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/17 19:36:16 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/18 13:15:20 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/19 22:06:46 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MOVE_H
 # define MOVE_H
-
 
 typedef struct		s_input
 {

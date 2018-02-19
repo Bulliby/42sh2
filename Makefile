@@ -11,7 +11,8 @@ SRC 			= main.c\
 
 READLINE	    = move.c\
 				  winsize.c\
-				  term.c\
+				  term_conf.c\
+				  events.c\
 				  cap.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))

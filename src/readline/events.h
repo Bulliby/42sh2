@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 13:15:13 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/18 23:44:04 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/19 23:33:37 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,8 @@
 # define CTRL_UP 4
 # define CTRL_LEFT 5
 
-#endif
+typedef void        (*t_func_events)(void);
+char				**key_tab_events(void);
+t_func_events       *ptr_events();
+
+#endif  
