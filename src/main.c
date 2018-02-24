@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/19 23:48:50 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/25 00:19:31 by bulliby             \________/\/\_/      */
 /*                                                                            */
 
 /* ************************************************************************** */
@@ -18,37 +18,40 @@
 #include "winsize.h"
 #include "readline/move.h"
 #include "readline/term_conf.h"
+#include "cap.h"
+#include "input.h"
 
-char        *getInput()
+char        *g_input;
+char        *g_cmdln;
+
+void                getInput()
 {
-
-    char *buffer;
-
-    buffer = ft_strnew(MAX_INPUT_READ);
-	read(0, buffer, MAX_INPUT_READ);
-
-	return (buffer);
+    g_input = ft_strnew(MAX_INPUT_READ);
+	read(0, g_input, MAX_INPUT_READ);
 }
 
 void                events_while()
 {
     t_func_events   *events;
     int             event;
-    char            *buffer;
     char            **keys;
 
     events = ptr_events();
     keys = key_tab_events();
+    g_cmdln = ft_strnew(0);
+    use_cap("im");
     while(42)
     {
         event = 0;
-        buffer = getInput(buffer); 
+        getInput(); 
         while (event != EVENTS)
         {
-            if(!ft_strcmp(buffer, keys[event]))
+            if(!ft_strcmp(g_input, keys[event]))
                 events[event](); 
             event++;
         }
+        if (ft_isprint(g_input[0]))
+            insert_at(g_cmdln, g_input[0]);
     }
 }
 

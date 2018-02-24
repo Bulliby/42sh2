@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 22:36:19 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/19 21:08:56 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/24 20:06:14 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void				get_winsize(void)
 /**
  * Give the pos in the buffer for a given cursor pos
  */
-int					cursor_to_sbuffer(int x, int y)
+int					cursor_to_buffer(int x, int y)
 {
 	return (x + y * (g_ws.ws_col + 1));
 }

@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 23:43:05 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/19 23:37:17 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/24 19:48:01 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char					**key_tab_events(void)
     char                **keys;
 
     keys = ft_memalloc_fail(sizeof(char **) * EVENTS);
-    keys[0] = ft_strdup(k_UP);
-    keys[1] = ft_strdup(k_DOWN);
-	/*ret[2] = T_LEFT;
-	ret[3] = T_RIGHT;
+    keys[LEFT] = ft_strdup(k_LEFT);
+    keys[RIGHT] = ft_strdup(k_RIGHT);
+	keys[DOWN] = ft_strdup(k_DOWN);
+	/*ret[3] = T_RIGHT;
 	ret[4] = T_DEL;
 	ret[5] = T_HOME;
 	ret[6] = T_END;
@@ -42,9 +42,10 @@ t_func_events       *ptr_events()
     t_func_events *events;
 
     events = ft_memalloc_fail(sizeof(t_func_events) * EVENTS);
-	events[UP] = &move_left;
-	events[DOWN] = &move_right;
-	/*ptrfunc[LEFT] = &move_left;
+	events[LEFT] = &move_left;
+	events[RIGHT] = &move_right;
+	events[DOWN] = &move_down;
+    /*
 	ptrfunc[RIGHT] = &move_right;
 	ptrfunc[DEL] = &del_at;
 	ptrfunc[HOME] = &home;

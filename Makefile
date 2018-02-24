@@ -3,7 +3,7 @@ NAME			= 42sh
 $(shell mkdir -p .obj/src/readline 2> /dev/null)
 
 CC				= gcc
-CFLAGS			= -Wall -Wextra -Werror 
+CFLAGS			= #-Wall -Wextra -Werror 
 INCLUDES		= -I./src/includes -I./libft/includes -I./src/readline
 LIB				= -L./libft -lft -lncurses
 
@@ -14,6 +14,7 @@ READLINE	    = move.c\
 				  term_conf.c\
 				  events.c\
 				  cap.c\
+				  input.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))
 			  
