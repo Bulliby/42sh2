@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/17 20:15:19 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/24 23:18:20 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/25 23:10:49 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,11 @@ void				move_left(void)
 
 void				move_right(void)
 {
+    //For don't move higher from the last character
+    if (cursor_to_buffer(g_cursor.x + 1, g_cursor.y) > \
+        (int)ft_strlen(g_cmdln) + g_len_prompt)
+    return ;
+
     //Simply go right
 	if (g_cursor.x + 1 <= g_ws.ws_col)
 	{
@@ -73,6 +78,20 @@ void                move_down(void)
     }
 }
 
+void				move_up(void)
+{
+    //Don't move in the prompt's scope
+    if (g_cursor.y == 0 && g_cursor.x <= g_len_prompt)
+        return;
+
+    //Go up
+	if (g_cursor.y - 1 >= 0)
+	{
+		use_cap("up");
+		g_cursor.y--;
+	}
+}
+
 /**
  * Same as move_right without cursor's moves
  */
@@ -88,23 +107,3 @@ void        putchar_move_cursor(void)
 		g_cursor.y++;
 	}
 }
-/*
-void				move_up(void)
-{
-	t_signal_var	*s;
-
-	s = singleton();
-	if (s->input->cursor->y - 1 >= 0)
-	{
-		use_cap("up");
-		s->input->cursor->y--;
-	}
-	if (s->input->cursor->x <= s->input->sprompt && s->input->cursor->y == 0)
-	{
-		s->input->cursor->x = 0;
-		use_cap("cr");
-		use_ncap("nd", s->input->sprompt - 1);
-		s->input->cursor->x = s->input->sprompt;
-	}
-}
-*/

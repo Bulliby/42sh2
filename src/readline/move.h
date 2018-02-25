@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/17 19:36:16 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/24 20:21:14 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/25 22:45:55 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct		s_cursor
 void				move_right(void);
 void				move_left(void);
 void				move_down(void);
+void				move_up(void);
 
 void				putchar_move_cursor(void);
 #endif

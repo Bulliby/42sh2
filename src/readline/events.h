@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 13:15:13 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/24 19:59:03 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/25 22:52:25 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define k_CTRL_UP "\x1B\x5B\x31\x3B\x35\x43"
 # define k_CTRL_LEFT "\x1B\x5B\x31\x3B\x35\x44"
 
-# define EVENTS 3
+# define EVENTS 4
 # define LEFT 0
 # define RIGHT 1
 # define DOWN 2
