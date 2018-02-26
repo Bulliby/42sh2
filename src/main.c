@@ -6,11 +6,12 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/26 13:30:43 by poledirec           \________/\/\_/      */
+/*   Updated: 2018/02/26 20:16:09 by bulliby             \________/\/\_/      */
 /*                                                                            */
 
 /* ************************************************************************** */
 #include <unistd.h>
+#include <signal.h>
 
 #include "libft.h"
 #include "readline/events.h"
@@ -20,7 +21,7 @@
 #include "readline/term_conf.h"
 #include "cap.h"
 #include "input.h"
-#include "signal.h"
+#include "signal_conf.h"
 
 char        *g_input;
 char        *g_cmdln;
@@ -61,7 +62,7 @@ int main(int ac, char **av, char **env)
     (void)ac;
     (void)av;
     (void)env;
-    signal(SIGINT, sig_clear);
+    block_signals();
     init_term();
     get_winsize();
     events_while();
