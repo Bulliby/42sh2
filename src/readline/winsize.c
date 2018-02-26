@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 22:36:19 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/24 20:06:14 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/02/26 13:32:38 by poledirec           \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "libft.h"
 #include "term_conf.h"
 #include "../main.h"
+#include "move.h"
 
 t_winsize       g_ws;
 extern t_term   g_term;
@@ -33,4 +34,10 @@ void				get_winsize(void)
 int					cursor_to_buffer(int x, int y)
 {
 	return (x + y * (g_ws.ws_col + 1));
+}
+
+void				buffer_to_cursor(int pos, t_cursor *cur)
+{
+	cur->y = pos / (g_ws.ws_col + 1);
+	cur->x = pos % (g_ws.ws_col + 1);
 }
