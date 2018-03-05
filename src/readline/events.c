@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 23:43:05 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/03/03 12:48:21 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/03/05 22:58:10 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "libft.h"
 #include "move.h"
 #include "del.h"
+#include "term_conf.h"
 #include "../main.h"
 
 char					**key_tab_events(void)
@@ -25,9 +26,9 @@ char					**key_tab_events(void)
     keys[RIGHT] = ft_strdup(k_RIGHT);
 	keys[DOWN] = ft_strdup(k_DOWN);
 	keys[UP] = ft_strdup(k_UP);
-	keys[DEL] = ft_strdup(k_DEL);//backspace
+	keys[DEL] = ft_strdup(k_DEL);
+	keys[QUIT] = ft_strdup(k_QUIT);
     /*
-	ret[5] = T_HOME;
 	ret[6] = T_END;
 	ret[7] = T_FWORD;
 	ret[8] = T_BWORD;
@@ -49,8 +50,8 @@ t_func_events       *ptr_events()
 	events[DOWN] = &move_down;
 	events[UP] = &move_up;
     events[DEL] = &del;
+	events[QUIT] = &exit_term;
     /*
-	ptrfunc[HOME] = &home;
 	ptrfunc[END] = &end;
 	ptrfunc[FWORD] = &fword;
 	ptrfunc[BWORD] = &bword;

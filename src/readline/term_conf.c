@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 23:39:59 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/19 21:10:32 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/03/05 23:06:37 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,20 @@
 
 #include "term_conf.h"
 #include "libft.h"
+#include "cap.h"
 
 t_term  g_term;
 
 void		exit_term(void)
 {
+    use_cap("ei");
     if (tcgetattr(g_term.fd, &g_term.termios) == -1)
         ft_quit("error: tcgetattr", 2, -1);
     g_term.termios.c_lflag |= (ICANON | ECHO);
     if (tcsetattr(g_term.fd, TCSANOW, &(g_term.termios)) == -1)
         ft_quit("error: tcsetattr", 2, -1);
     close(g_term.fd);
+    exit(1);
 }
 
 void		init_term(void)
