@@ -6,7 +6,7 @@
 /*   By: poledirec <wellsguillaume+at+gmail.com>         /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/26 13:04:11 by poledirec          \     \_\ \     /     */
-/*   Updated: 2018/02/26 20:19:23 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/07 20:25:22 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void         block_signals(void)
 	signal(SIGQUIT, SIG_IGN);
     signal(SIGINT, sig_clear);
 	signal(SIGTERM, SIG_IGN);
+    signal(SIGWINCH, get_winsize);
 }
 
 void				sig_clear(int sig)

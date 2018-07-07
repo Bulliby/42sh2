@@ -17,6 +17,7 @@ READLINE	    = move.c\
 				  input.c\
 				  signal_conf.c\
 				  del.c\
+				  rewrite.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))
 			  

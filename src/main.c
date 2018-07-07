@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/03/05 22:56:18 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/07 21:29:21 by bulliby             \________/\/\_/      */
 /*                                                                            */
 
 /* ************************************************************************** */
@@ -22,9 +22,20 @@
 #include "cap.h"
 #include "input.h"
 #include "signal_conf.h"
+#include "rewrite.h"
 
 char        *g_input;
 char        *g_cmdln;
+
+/**
+ * This two global variable are the only one.
+ *
+ * _g_screen_size is a flag toggle when the screen size change
+ * _g_ws is the size of the terminal window
+ */
+int         g_screen_size = 0;
+t_winsize   g_ws;
+
 
 void                getInput()
 {
@@ -47,6 +58,7 @@ void                events_while()
     {
         event = 0;
         getInput(); 
+        printf("test\n");
         while (event != EVENTS)
         {
             if(!ft_strcmp(g_input, keys[event]))
@@ -55,6 +67,8 @@ void                events_while()
         }
         if (ft_isprint(g_input[0]))
             insert_at(g_cmdln, g_input[0]);
+        if (screen_size_change())
+            rewrite_screen();
     }
 }
 
@@ -63,9 +77,9 @@ int main(int ac, char **av, char **env)
     (void)ac;
     (void)av;
     (void)env;
-    block_signals();
     init_term();
-    get_winsize();
+    block_signals();
+    get_winsize(42);
     events_while();
     return (0);
 }

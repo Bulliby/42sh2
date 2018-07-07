@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/03/03 11:23:33 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/04/29 18:40:52 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/07 20:18:39 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void				del(void)
 	char			*new_cmd;
 
     //Supress char in BUFFER
-    new_cmd = ft_strsupress_at(g_cmdln,\ 
+    new_cmd = ft_strsupress_at(g_cmdln,\
     cursor_to_buffer(g_cursor.x, g_cursor.y) - g_len_prompt - 1);
     free(g_cmdln);
 	g_cmdln = new_cmd;

@@ -6,13 +6,18 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 13:15:13 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/03/05 23:04:07 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/07 20:06:48 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef EVENTS_H
 # define EVENTS_H
 
+/**
+ * LINUX KEYS
+ * TODO: handle all type of OS binding keys.
+ * maybe use ./configure?
+ */
 # define k_UP "\x1B\x5B\x41"
 # define k_DOWN "\x1B\x5B\x42"
 # define k_LEFT "\x1B\x5B\x44"
