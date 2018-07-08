@@ -6,17 +6,13 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/07 20:10:28 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/07 21:24:04 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/08 13:59:44 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cap.h"
-#include "libft.h"
+#ifndef REWRITE_H
+# define REWRITE_H
 
-extern char     *g_cmdln;
+void    init_resize_screen_thread(void);
 
-void        rewrite_screen()
-{
-    use_cap("cl");// clear the whole screen
-    ft_putstr(g_cmdln);
-}
+#endif  

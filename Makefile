@@ -5,7 +5,7 @@ $(shell mkdir -p .obj/src/readline 2> /dev/null)
 CC				= gcc
 CFLAGS			= #-Wall -Wextra -Werror 
 INCLUDES		= -I./src/includes -I./libft/includes -I./src/readline
-LIB				= -L./libft -lft -lncurses
+LIB				= -L./libft -lft -lncurses -lpthread
 
 SRC 			= main.c\
 
@@ -17,7 +17,7 @@ READLINE	    = move.c\
 				  input.c\
 				  signal_conf.c\
 				  del.c\
-				  rewrite.c\
+				  resize_screen.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))
 			  

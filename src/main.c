@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/07 21:29:21 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/08 16:23:13 by bulliby             \________/\/\_/      */
 /*                                                                            */
 
 /* ************************************************************************** */
@@ -22,7 +22,7 @@
 #include "cap.h"
 #include "input.h"
 #include "signal_conf.h"
-#include "rewrite.h"
+#include "resize_screen.h"
 
 char        *g_input;
 char        *g_cmdln;
@@ -54,11 +54,11 @@ void                events_while()
     keys = key_tab_events();
     g_cmdln = ft_strnew(0);
     use_cap("im");
+    init_resize_screen_thread();
     while(42)
     {
         event = 0;
         getInput(); 
-        printf("test\n");
         while (event != EVENTS)
         {
             if(!ft_strcmp(g_input, keys[event]))
@@ -67,10 +67,9 @@ void                events_while()
         }
         if (ft_isprint(g_input[0]))
             insert_at(g_cmdln, g_input[0]);
-        if (screen_size_change())
-            rewrite_screen();
     }
 }
+
 
 int main(int ac, char **av, char **env)
 {
