@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/24 20:36:12 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/02/25 00:18:24 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/19 21:13:31 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ extern t_winsize    g_ws;
  * recursively insert a new character on each full line who was the last 
  * char of the precedent line.
  */
-
 void				insert_rec(int y, int rec)
 {
 	if (is_line_full(y))
