@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   start.h                                                                  */
+/*   fword-bword.h                                                            */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/07/19 21:03:48 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/19 21:51:12 by bulliby             \________/\/\_/      */
+/*   Created: 2018/07/19 21:49:03 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/07/19 22:20:32 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef START_END_H
-# define START_END_H
+#ifndef FOWORD_BWORD_H
+# define FOWORD_BWORD_H
 
-void    start(void);
-void    end(void);
+void				fword(void);
 
 #endif

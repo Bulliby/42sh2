@@ -19,6 +19,7 @@ READLINE	    = move.c\
 				  del.c\
 				  resize_screen.c\
 				  start-end.c\
+				  fword-bword.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))
 			  
