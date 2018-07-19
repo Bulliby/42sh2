@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 13:15:13 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/19 21:20:14 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/19 21:32:42 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,9 @@
 # define k_DEL "\x7F"  // Backspace
 # define k_QUIT "\x04" // Ctrl-D
 # define k_START "\x01" // Ctrl-A
+# define k_END "\x05" // Ctrl-A
 
-# define EVENTS 7
+# define EVENTS 8
 # define LEFT 0
 # define RIGHT 1
 # define DOWN 2
@@ -34,6 +35,7 @@
 # define DEL 4
 # define QUIT 5
 # define START 6
+# define END 7
 
 typedef void        (*t_func_events)(void);
 char				**key_tab_events(void);

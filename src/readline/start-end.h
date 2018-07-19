@@ -6,13 +6,14 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/19 21:03:48 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/19 21:16:20 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/19 21:34:32 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef START_H
 # define START_H
 
-void start(void);
+void    start(void);
+void    end(void);
 
 #endif

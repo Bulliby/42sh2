@@ -18,7 +18,7 @@ READLINE	    = move.c\
 				  signal_conf.c\
 				  del.c\
 				  resize_screen.c\
-				  start.c\
+				  start-end.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))
 			  
