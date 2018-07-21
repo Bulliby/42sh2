@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 23:43:05 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/19 22:13:42 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/21 21:57:11 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ char					**key_tab_events(void)
     keys[START] = ft_strdup(k_START);
 	keys[END] = ft_strdup(k_END);
 	keys[FWORD] = ft_strdup(k_FWORD);
+    keys[BWORD] = ft_strdup(k_BWORD);
     /*
 	ret[6] = T_END;
 	ret[7] = T_FWORD;
@@ -59,6 +60,7 @@ t_func_events       *ptr_events()
 	events[START] = &start;
 	events[END] = &end;
 	events[FWORD] = &fword;
+	events[BWORD] = &bword;
     /*
 	ptrfunc[END] = &end;
 	ptrfunc[FWORD] = &fword;
