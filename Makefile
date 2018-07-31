@@ -20,6 +20,9 @@ READLINE	    = move.c\
 				  resize_screen.c\
 				  start-end.c\
 				  fword-bword.c\
+				  visual.c\
+				  visual_events.c\
+				  v_move.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))
 			  

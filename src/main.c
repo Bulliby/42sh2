@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/21 21:55:29 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/31 22:02:57 by bulliby             \________/\/\_/      */
 /*                                                                            */
 
 /* ************************************************************************** */
@@ -36,7 +36,7 @@ char        *g_cmdln;
 int         g_screen_size = 0;
 t_winsize   g_ws;
 
-
+//TODO: replace maybe in main_readline.c...
 void                getInput()
 {
     g_input = ft_strnew(MAX_INPUT_READ);

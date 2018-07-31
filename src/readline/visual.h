@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   main.h                                                                   */
+/*   visual.h                                                                 */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/17 20:23:27 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/31 21:36:16 by bulliby             \________/\/\_/      */
+/*   Created: 2018/07/31 19:01:34 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/07/31 19:44:39 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
- 
-# define MAX_INPUT_READ 8
-void                getInput();
+#ifndef VISUAL_H
+# define VISUAL_H
+
+void visual_mode();
 
 #endif

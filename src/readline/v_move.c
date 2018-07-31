@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   main.h                                                                   */
+/*   v_move.c                                                                 */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/17 20:23:27 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/31 21:36:16 by bulliby             \________/\/\_/      */
+/*   Created: 2018/07/31 21:18:24 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/07/31 22:07:44 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
- 
-# define MAX_INPUT_READ 8
-void                getInput();
+#include "v_move.h"
+#include "libft.h"
 
-#endif
+void        v_move_left()
+{
+}
+
+void        v_move_right()
+{
+}

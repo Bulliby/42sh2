@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/24 20:36:12 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/19 21:13:31 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/07/31 18:58:57 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "cap.h"
 #include "libft.h"
 
+//TODO: Rename file to insert.c
 extern t_cursor     g_cursor;
 extern int			g_len_prompt;
 extern char         *g_input;
