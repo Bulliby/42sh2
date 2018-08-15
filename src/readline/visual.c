@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/31 19:27:46 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/31 22:07:21 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/08/15 12:58:24 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "winsize.h"
 #include "move.h"
 #include "../main.h"
+#include "cap.h"
 
 extern char         *g_cmdln;
 extern t_cursor     g_cursor;
@@ -41,6 +42,7 @@ void                visual_mode()
     events = v_ptr_events();
     keys = v_key_tab_events();
     pos = cursor_to_buffer(g_cursor.x, g_cursor.y);
+    use_cap("ei");
     while(42)
     {
         event = 0;
@@ -48,7 +50,7 @@ void                visual_mode()
         while (event != VISUAL_EVENTS)
         {
             if(!ft_strcmp(g_input, keys[event]))
-                events[event](); 
+                events[event](pos); 
             event++;
         }
     }
