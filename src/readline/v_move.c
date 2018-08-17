@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/31 21:18:24 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/08/15 12:56:29 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/08/17 17:59:27 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ extern int		        g_len_prompt;
 extern char             *g_cmdln;
 extern t_winsize        g_ws;
 
-void        v_move_left(int pos)
+void        v_move_left(int pos, t_cursor cp)
 {
     int     len;
 
@@ -59,7 +59,7 @@ void        v_move_left(int pos)
 	}
 }
 
-void        v_move_right(int pos)
+void        v_move_right(int pos, t_cursor cp)
 {
     int     len;
 

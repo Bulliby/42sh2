@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/31 19:27:46 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/08/15 12:58:24 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/08/17 17:35:17 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,21 @@ extern char         *g_cmdln;
 extern t_cursor     g_cursor;
 extern int			g_len_prompt;
 extern char			*g_input;
+
+/**
+ * Put the character who will act like a pivot for visual mode.
+ */
+static void         first_visual_char()
+{
+    use_cap("so");
+
+	ft_putchar(g_cmdln[cursor_to_buffer(g_cursor.x, g_cursor.y)\
+     - g_len_prompt]);
+
+    use_cap("se");
+    use_cap("le");
+
+}
 
 
 /**
@@ -43,6 +58,7 @@ void                visual_mode()
     keys = v_key_tab_events();
     pos = cursor_to_buffer(g_cursor.x, g_cursor.y);
     use_cap("ei");
+    first_visual_char();
     while(42)
     {
         event = 0;
@@ -50,7 +66,7 @@ void                visual_mode()
         while (event != VISUAL_EVENTS)
         {
             if(!ft_strcmp(g_input, keys[event]))
-                events[event](pos); 
+                events[event](pos, g_cursor); 
             event++;
         }
     }

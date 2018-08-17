@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 23:43:05 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/08/15 12:53:30 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/08/17 16:59:02 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define VISUAL_EVENTS_H
 
 # include "keys.h"
+# include "move.h"
 
 # define VISUAL_EVENTS 2
 # define LEFT 0
@@ -21,8 +22,12 @@
 # define CUT 2
 # define COPY 3
 # define PASTE 4
+//TODO: need to implement EXIT
 
-typedef void            (*t_func_events)(int pos);
+/**
+ * param cp, is not used in copy, cut.
+ */
+typedef void            (*t_func_events)(int pos, t_cursor cp);
 char					**v_key_tab_events(void);
 t_func_events           *v_ptr_events();
 
