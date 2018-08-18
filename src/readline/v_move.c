@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/31 21:18:24 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/08/17 17:59:27 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/08/18 16:50:43 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 #include "libft.h"
 #include "move.h"
 
+/**
+ * t_pos            = position after move
+ * pos              = postion when we initiate the copy paste function
+ * t_pos (+|-) 1    = current position of the cursor
+ * If the current position is equal to the copy past initiate position we do
+ * nothing and got to the next character.
+ */
+
 extern t_cursor         g_cursor;
 extern int		        g_len_prompt;
 extern char             *g_cmdln;
@@ -23,21 +31,27 @@ extern t_winsize        g_ws;
 
 void        v_move_left(int pos, t_cursor cp)
 {
-    int     len;
+    int     t_pos;
 
     //Discard if we are at the start of command line
 	if (g_cursor.x - 1 < g_len_prompt && g_cursor.y == 0)
 		return ;
    
-    len = cursor_to_buffer(g_cursor.x, g_cursor.y) - 1;
+    t_pos = cursor_to_buffer(g_cursor.x, g_cursor.y) - 1;
 
-    if (pos < len)
+
+    /**
+     * Here the equal is necessary for 'uncolor' the last right char after pos
+     * when we move to left. I brutforced this...
+     */
+    if (pos <= t_pos)
         use_cap("se");
     else
         use_cap("so");
 
-	ft_putchar(g_cmdln[cursor_to_buffer(g_cursor.x, g_cursor.y)\
-     - g_len_prompt]);
+    if (pos != t_pos + 1)
+        ft_putchar(g_cmdln[cursor_to_buffer(g_cursor.x, g_cursor.y)\
+         - g_len_prompt]);
 
 	if (g_cursor.x - 1 < 0)
 	{
@@ -48,11 +62,8 @@ void        v_move_left(int pos, t_cursor cp)
 	}
 	else
 	{
-        /**
-         * Like we have alreay write a character we need to go back from
-         * 2 positions.
-         */
-		use_cap("le");
+        if (pos != t_pos + 1)
+		    use_cap("le");
 		if (g_cursor.x != g_ws.ws_col)
 			use_cap("le");
 		g_cursor.x--;
@@ -61,22 +72,25 @@ void        v_move_left(int pos, t_cursor cp)
 
 void        v_move_right(int pos, t_cursor cp)
 {
-    int     len;
+    int     t_pos;
 
     //Discard if we are at the end of command line
 	if (cursor_to_buffer(g_cursor.x + 1, g_cursor.y) > \
 			(int)ft_strlen(g_cmdln) + g_len_prompt - 1)
 		return ;
 
-    len = cursor_to_buffer(g_cursor.x, g_cursor.y) + 1;
+    t_pos = cursor_to_buffer(g_cursor.x, g_cursor.y) + 1;
 
-    if (pos < len)
+    if (pos < t_pos)
         use_cap("so");
-    else
+    else 
         use_cap("se");
 
-	ft_putchar(g_cmdln[cursor_to_buffer(g_cursor.x, \
+    if (pos != t_pos - 1)
+	    ft_putchar(g_cmdln[cursor_to_buffer(g_cursor.x, \
 				g_cursor.y) - g_len_prompt]);
+    else
+        use_cap("nd");
 
 	if (g_cursor.x + 1 <= g_ws.ws_col)
 		g_cursor.x++;
