@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/31 19:27:46 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/08/17 17:35:17 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/13 19:24:59 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "move.h"
 #include "../main.h"
 #include "cap.h"
+#include "unselect.h"
 
 extern char         *g_cmdln;
 extern t_cursor     g_cursor;
@@ -28,6 +29,7 @@ extern char			*g_input;
  */
 static void         first_visual_char()
 {
+    use_cap("sc");//Save the copy's cursor position
     use_cap("so");
 
 	ft_putchar(g_cmdln[cursor_to_buffer(g_cursor.x, g_cursor.y)\
@@ -49,6 +51,7 @@ void                visual_mode()
     char            **keys;
     int             event;
     t_func_events   *events;
+    t_cursor        cp;
 
     //Nothing to do in visual mode if there is no txt.
     if (ft_strlen(g_cmdln) == 0)
@@ -59,6 +62,11 @@ void                visual_mode()
     pos = cursor_to_buffer(g_cursor.x, g_cursor.y);
     use_cap("ei");
     first_visual_char();
+
+    //Save position before visaul moves
+    cp.x = g_cursor.x;
+    cp.y = g_cursor.y;
+
     while(42)
     {
         event = 0;
@@ -66,8 +74,13 @@ void                visual_mode()
         while (event != VISUAL_EVENTS)
         {
             if(!ft_strcmp(g_input, keys[event]))
-                events[event](pos, g_cursor); 
+                events[event](pos, cp); 
             event++;
+        }
+        if(!ft_strcmp(g_input, k_ESCAPE))
+        {
+            quit_visual(cp);
+            break;
         }
     }
 }
