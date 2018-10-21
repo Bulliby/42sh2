@@ -24,6 +24,7 @@ READLINE	    = move.c\
 				  visual_events.c\
 				  v_move.c\
 				  unselect.c\
+				  copy.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))
 			  

@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/03/03 11:23:33 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/07 20:18:39 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 11:57:11 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ extern char         *g_cmdln;
 extern t_winsize    g_ws;
 
 /**
+ * del_rec Delete one characther in each line
+ *
  * We delete the prev character "le" "dc"
  * We save the cursor Pos "sc", we go at first line full below "do"
  * We delete the character at start of the line "dc" we go one line up "up"

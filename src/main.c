@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/31 22:02:57 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 12:30:46 by bulliby             \________/\/\_/      */
 /*                                                                            */
 
 /* ************************************************************************** */
@@ -41,6 +41,7 @@ void                getInput()
 {
     g_input = ft_strnew(MAX_INPUT_READ);
 	read(0, g_input, MAX_INPUT_READ);
+    //TODO put in debug function
     //printf("%X%X%X%X%X%X%X%X\n", g_input[0], g_input[1], g_input[2], g_input[3], g_input[4], g_input[5], g_input[6], g_input[7]);
 }
 

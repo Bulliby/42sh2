@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/31 19:27:46 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/13 19:24:59 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 12:06:04 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ extern char         *g_cmdln;
 extern t_cursor     g_cursor;
 extern int			g_len_prompt;
 extern char			*g_input;
+char                *g_cp_data;
 
 /**
  * Put the character who will act like a pivot for visual mode.
