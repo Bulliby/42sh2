@@ -26,6 +26,7 @@ READLINE	    = move.c\
 				  unselect.c\
 				  copy.c\
 				  paste.c\
+				  cut.c\
 
 READLINE_SRC	= $(addprefix readline/, $(READLINE))
 			  

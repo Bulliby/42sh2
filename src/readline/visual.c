@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/31 19:27:46 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/21 12:06:04 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 19:05:13 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,23 @@ char                *g_cp_data;
  */
 static void         first_visual_char()
 {
+    int             pos;
+
+    pos = cursor_to_buffer(g_cursor.x, g_cursor.y) - g_len_prompt;
+
+    /**
+     * If we are at the last column we go back one char because
+     * this one is empty
+     */
+    if (pos == ft_strlen(g_cmdln))
+        move_left(); 
+
+    pos = cursor_to_buffer(g_cursor.x, g_cursor.y) - g_len_prompt;
+
     use_cap("sc");//Save the copy's cursor position
     use_cap("so");
 
-	ft_putchar(g_cmdln[cursor_to_buffer(g_cursor.x, g_cursor.y)\
-     - g_len_prompt]);
+	ft_putchar(g_cmdln[pos]);
 
     use_cap("se");
     use_cap("le");
@@ -78,6 +90,9 @@ void                visual_mode()
                 events[event](pos, cp); 
             event++;
         }
+        //When we CUT we also quit visual mode
+        if (!ft_strcmp(g_input, k_CUT))
+            break;
         if(!ft_strcmp(g_input, k_ESCAPE))
         {
             quit_visual(cp);

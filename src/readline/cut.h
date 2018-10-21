@@ -6,11 +6,15 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/10/21 13:01:55 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/21 13:02:17 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 16:43:08 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUT_H
 # define CUT_H
+
+#include "move.h"
+
+void        cut();
 
 #endif

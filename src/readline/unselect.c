@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/10/13 19:24:24 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/13 19:24:33 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 18:50:29 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void                quit_visual(t_cursor cp)
     use_cap("se");
     unselect_left(cp);
     //Restor the cursor postion saved at initiate of copy
-    use_cap("rc");
+    //use_cap("rc");
     g_cursor = cp;
     //Re-enter in insert mode
     use_cap("im");

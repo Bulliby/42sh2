@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/17 19:47:23 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/21 15:47:32 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 16:55:52 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@
 # define k_BWORD "\x02" // Ctrl-B
 # define k_VISUAL "\x16" // Ctrl-V
 # define k_COPY "\x19" // Ctrl-y
-# define k_CUT "\x16" // Ctrl-V
+# define k_CUT "\x18" // Ctrl-V
 # define k_PASTE "\x10" // Ctrl-V
 # define k_ESCAPE "\x1B" // Ctrl-V
 
