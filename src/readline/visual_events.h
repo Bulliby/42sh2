@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   winsize.h                                                                */
+/*   visual_events.h                                                          */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/17 19:47:23 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/07 20:27:14 by bulliby             \________/\/\_/      */
+/*   Created: 2018/02/18 23:43:05 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/10/21 16:55:17 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINSIZE_H
-# define WINSIZE_H
+#ifndef VISUAL_EVENTS_H
+# define VISUAL_EVENTS_H
 
-#include <sys/ioctl.h>
-#include "move.h"
+# include "keys.h"
+# include "move.h"
 
-typedef struct winsize	t_winsize;
+# define VISUAL_EVENTS 4
+# define LEFT 0
+# define RIGHT 1
+# define COPY 2
+# define CUT 3
+# define PASTE 4
 
-int                     cursor_to_buffer(int x, int y);
-void				    get_winsize(int signo);
-void				    buffer_to_cursor(int pos, t_cursor *cur);
-int                     screen_size_change();
+/**
+ * param cp, is not used in copy, cut.
+ */
+typedef void            (*t_func_events)(int pos, t_cursor cp);
+char					**v_key_tab_events(void);
+t_func_events           *v_ptr_events();
 
 #endif

@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   winsize.h                                                                */
+/*   events.h                                                                 */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/17 19:47:23 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/07 20:27:14 by bulliby             \________/\/\_/      */
+/*   Created: 2018/02/18 13:15:13 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/10/21 15:43:46 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINSIZE_H
-# define WINSIZE_H
+#ifndef EVENTS_H
+# define EVENTS_H
 
-#include <sys/ioctl.h>
-#include "move.h"
+# include "keys.h"
+ 
+# define EVENTS 12
+# define LEFT 0
+# define RIGHT 1
+# define DOWN 2
+# define UP 3
+# define DEL 4
+# define QUIT 5
+# define START 6
+# define END 7
+# define FWORD 8
+# define BWORD 9
+# define VISUAL 10
+# define PASTE 11
 
-typedef struct winsize	t_winsize;
+typedef void        (*t_func_events)(void);
+char				**key_tab_events(void);
+t_func_events       *ptr_events();
 
-int                     cursor_to_buffer(int x, int y);
-void				    get_winsize(int signo);
-void				    buffer_to_cursor(int pos, t_cursor *cur);
-int                     screen_size_change();
-
-#endif
+#endif  

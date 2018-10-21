@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   main.h                                                                   */
+/*   signal.h                                                                 */
 /*                                                        ________            */
-/*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
+/*   By: poledirec <wellsguillaume+at+gmail.com>         /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/17 20:23:27 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/31 21:36:16 by bulliby             \________/\/\_/      */
+/*   Created: 2018/02/26 13:29:47 by poledirec          \     \_\ \     /     */
+/*   Updated: 2018/02/26 20:12:47 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAIN_H
-# define MAIN_H
- 
-# define MAX_INPUT_READ 8
-void                getInput();
+#ifndef SIGNALLN_H
+# define SIGNALLN_H
+
+void				sig_clear(int sig);
+void                block_signals(void);
 
 #endif

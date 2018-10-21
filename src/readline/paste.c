@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   winsize.h                                                                */
+/*   paste.c                                                                  */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/17 19:47:23 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/07 20:27:14 by bulliby             \________/\/\_/      */
+/*   Created: 2018/10/21 15:33:59 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/10/21 16:14:24 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WINSIZE_H
-# define WINSIZE_H
+#include "paste.h"
+#include "input.h" 
+#include <stdio.h>
 
-#include <sys/ioctl.h>
-#include "move.h"
+extern char     *g_cp_data;
 
-typedef struct winsize	t_winsize;
+void            paste()
+{
+    int         i;
 
-int                     cursor_to_buffer(int x, int y);
-void				    get_winsize(int signo);
-void				    buffer_to_cursor(int pos, t_cursor *cur);
-int                     screen_size_change();
-
-#endif
+    i = 0;
+    while (g_cp_data[i])
+    {
+        insert_at(g_cp_data[i]);
+        i++; 
+    }
+}
