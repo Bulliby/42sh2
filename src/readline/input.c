@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/24 20:36:12 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/31 18:58:57 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 15:37:40 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void				insert_rec(int y, int rec)
 	}
 }
 
-char				*insert_at(char *buffer, char c)
+char				*insert_at(char c)
 {
 	insert_rec(g_cursor.y, 0);
 	g_cmdln = ft_strinsert_at(g_cmdln, c, cursor_to_buffer(g_cursor.x,\

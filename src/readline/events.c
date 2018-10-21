@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/18 23:43:05 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/31 21:33:20 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 15:46:31 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #include "../main.h"
 #include "fword-bword.h"
 #include "visual.h"
+#include "paste.h"
 
 char					**key_tab_events(void)
 {
@@ -36,6 +37,7 @@ char					**key_tab_events(void)
 	keys[FWORD] = ft_strdup(k_FWORD);
     keys[BWORD] = ft_strdup(k_BWORD);
 	keys[VISUAL] = ft_strdup(k_VISUAL);
+	keys[PASTE] = ft_strdup(k_PASTE);
     /*
 	ret[10] = T_SUP;
 	ret[11] = T_PAST;
@@ -60,6 +62,7 @@ t_func_events       *ptr_events()
 	events[FWORD] = &fword;
 	events[BWORD] = &bword;
 	events[VISUAL] = &visual_mode;
+	events[PASTE] = &paste;
     /*
 	ptrfunc[CP] = &select_c;
 	ptrfunc[SUP] = &del;

@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/02/11 18:43:20 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/21 12:30:46 by bulliby             \________/\/\_/      */
+/*   Updated: 2018/10/21 15:47:48 by bulliby             \________/\/\_/      */
 /*                                                                            */
 
 /* ************************************************************************** */
@@ -67,7 +67,7 @@ void                events_while()
             event++;
         }
         if (ft_isprint(g_input[0]))
-            insert_at(g_cmdln, g_input[0]);
+            insert_at(g_input[0]);
     }
 }
 

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                                            */
-/*   input.h                                                                  */
+/*   paste.c                                                                  */
 /*                                                        ________            */
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
-/*   Created: 2018/02/25 00:09:10 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/21 15:38:25 by bulliby             \________/\/\_/      */
+/*   Created: 2018/10/21 15:33:59 by bulliby            \     \_\ \     /     */
+/*   Updated: 2018/10/21 16:14:24 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INPUT_H
-# define INPUT_H
+#include "paste.h"
+#include "input.h" 
+#include <stdio.h>
 
-void				insert_rec(int y, int rec);
-char				*insert_at(char c);
-int					is_line_full(int y);
+extern char     *g_cp_data;
 
-#endif
+void            paste()
+{
+    int         i;
+
+    i = 0;
+    while (g_cp_data[i])
+    {
+        insert_at(g_cp_data[i]);
+        i++; 
+    }
+}
