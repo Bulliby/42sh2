@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # RoxMyShell
 
 Project status: WIP
