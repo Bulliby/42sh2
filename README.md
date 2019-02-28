@@ -1,20 +1,17 @@
 # RoxMyShell
 
-Project status: WIP
-
-TODO:
-
-* Finish refacto of line edition
-* Write the shell interpreter
-* Implement some builtins
+Project status: **WIP**
 
 ---
 
-A try to refacto the old **42**'s school project for comment and better understand
-my part of this group project. The aim is also to make the part of the project
-that i haven't realase.
+Refacto of a 42 group project. This is a basic shell who must feat *POSIX* and use **termcap** for handle terminal interaction.
 
-- [ ] When resize screen only supress the used part of the screen.
+- [x] Handle Scree resize
+- [x] Line Edition
 - [ ] When resize don't put the cursor at the end of command line but at it's defautl pos.
-- [ ] Protect colone an line integer with mutex.
-- [ ] Supress Globals variable
+- [ ] Write the **Shell** interpreter with **AST** tree
+- [ ] Implement some more builtins
+
+### Readline
+
+The **readline** part of the project is done you can see is documentation here [readline](src/readline/README.md).
