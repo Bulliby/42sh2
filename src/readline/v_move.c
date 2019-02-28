@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/31 21:18:24 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/08/18 16:50:43 by bulliby             \________/\/\_/      */
+/*   Updated: 2019/02/28 21:10:38 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void        v_move_left(int pos, t_cursor cp)
     if (pos != t_pos + 1)
         ft_putchar(g_cmdln[cursor_to_buffer(g_cursor.x, g_cursor.y)\
          - g_len_prompt]);
+    
 
 	if (g_cursor.x - 1 < 0)
 	{
@@ -102,3 +103,14 @@ void        v_move_right(int pos, t_cursor cp)
 		use_cap("do");
 	}
 }
+
+/**
+ * NOTE: 
+ *
+ * When we leave standout mode e.g going left from precedent moving 
+ * right selection. It seems we move two step left the first time we do it. 
+ * In fact, this is not the case. The terminal handle the cursor highlithing by
+ * symply inversing standout mode of the current pos. 
+ * So when we remove standout mode on the first char, after we are on a 
+ * standout mode enabled postion who appear by the way reversed.
+ */
