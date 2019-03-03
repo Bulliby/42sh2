@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/10/13 19:24:24 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/21 18:50:29 by bulliby             \________/\/\_/      */
+/*   Updated: 2019/03/03 13:52:31 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,17 @@ static void         unselect_left(t_cursor cp)
     }
 }
 
+void                unselect(t_cursor cp)
+{
+    unselect_left(cp);
+    use_cap("rc");
+}
+
 
 void                quit_visual(t_cursor cp)
 {
 
+    /*
     use_cap("se");
     unselect_left(cp);
     //Restor the cursor postion saved at initiate of copy
@@ -74,4 +81,5 @@ void                quit_visual(t_cursor cp)
     g_cursor = cp;
     //Re-enter in insert mode
     use_cap("im");
+    */
 }

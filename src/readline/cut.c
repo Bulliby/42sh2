@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/10/21 13:01:33 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/21 19:04:51 by bulliby             \________/\/\_/      */
+/*   Updated: 2019/03/03 12:32:49 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,12 @@ void        cut(int pos, t_cursor cp)
     int     pos_end;
     int     len;
 
-    use_cap("se");
+    use_cap("se");//Escape from standout mode
     g_cp_data = set_cp_data(pos);
     len = ft_strlen(g_cp_data);
 
     pos_end = cursor_to_buffer(g_cursor.x, g_cursor.y);
+    //Move the cursor for deleting the part of cmd line previousl selected.
     if (pos_end < pos)
         move_to_right(pos_end - pos);
     else
@@ -58,5 +59,5 @@ void        cut(int pos, t_cursor cp)
         len--;
     }
 
-    use_cap("im");
+    use_cap("im");//Go back in insert mode
 }

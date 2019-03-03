@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/31 19:27:46 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/21 19:05:13 by bulliby             \________/\/\_/      */
+/*   Updated: 2019/03/03 13:47:19 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ static void         first_visual_char()
 /**
  * Execute a seconde infinite loop for intercept control key used in
  * copy/paste mode
+ *
+ * cp   : cursor position before visual move
+ * pos  : buffer position before visual move
  */
 void                visual_mode()
 {
@@ -90,13 +93,15 @@ void                visual_mode()
                 events[event](pos, cp); 
             event++;
         }
-        //When we CUT we also quit visual mode
-        if (!ft_strcmp(g_input, k_CUT))
+        //When we CUT or COPY we also quit visual mode
+        if (!ft_strcmp(g_input, k_CUT) || !ft_strcmp(g_input, k_COPY))
             break;
+        /*
         if(!ft_strcmp(g_input, k_ESCAPE))
         {
             quit_visual(cp);
             break;
         }
+        */
     }
 }

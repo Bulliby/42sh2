@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/07/19 21:48:30 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/07/21 21:54:48 by bulliby             \________/\/\_/      */
+/*   Updated: 2019/03/03 12:20:46 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@
 extern t_cursor     g_cursor;
 extern int			g_len_prompt;
 extern char         *g_cmdln;
-
-/**
- * TODO: A word seems not to be what i excepted. In fact it seems to be 
- * any text who is separated by special characters.
- */
 
 
 /**
@@ -49,7 +44,7 @@ static void			move_bword(t_cursor new_cur, t_cursor *cursor)
 
 
 /**
- * Move one word forward
+ * Move one word forward (a word in vim meaning)
  */
 void				fword(void)
 {
@@ -81,7 +76,7 @@ void				fword(void)
 }
 
 /**
- * Move one word backward
+ * Move one word backward (a word in vim meaning)
  */
 void				bword(void)
 {

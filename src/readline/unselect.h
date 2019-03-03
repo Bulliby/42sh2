@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/10/13 19:23:13 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/13 19:23:48 by bulliby             \________/\/\_/      */
+/*   Updated: 2019/03/03 13:31:59 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@
 
 
 void        quit_visual(t_cursor cp);
+void        unselect(t_cursor cp);
 
 #endif

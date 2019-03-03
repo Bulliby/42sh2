@@ -6,7 +6,7 @@
 /*   By: bulliby <wellsguillaume+at+gmail.com>           /   ____/_  _  __    */
 /*                                                      /    \  _\ \/ \/ /    */
 /*   Created: 2018/08/17 16:40:57 by bulliby            \     \_\ \     /     */
-/*   Updated: 2018/10/21 16:43:36 by bulliby             \________/\/\_/      */
+/*   Updated: 2019/03/03 13:52:35 by bulliby             \________/\/\_/      */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "keys.h"
 #include "winsize.h"
 #include "cap.h"
+#include "unselect.h"
 
 char                *g_cp_data;
 extern t_cursor     g_cursor;
@@ -23,7 +24,9 @@ extern char         *g_cmdln;
 extern char         *g_input;
 
 
-
+/**
+ * Used in cut and copy get the portion of cmdline choose.
+ */
 char            *set_cp_data(int pos_begin)
 {
     int         pos_end; 
@@ -39,7 +42,7 @@ void            copy(int pos, t_cursor cp)
 {
     use_cap("se");
     g_cp_data = set_cp_data(pos);
-
-    //Quit the visual mode and by the way unselect
-    g_input = ft_strdup(k_ESCAPE);
+    unselect(cp);
+    g_cursor = cp;
+    use_cap("im");
 }
