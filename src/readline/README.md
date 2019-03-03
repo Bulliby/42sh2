@@ -17,3 +17,5 @@
 ### Todo
 
 - [ ] Handle Key Bindings for Mac Os and Linux.
+- [ ] Copy function
+- [ ] Escape visual mode
